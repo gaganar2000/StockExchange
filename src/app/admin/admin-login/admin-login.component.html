@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+            <div class="alert alert-danger justify-content-center" *ngIf="error">
+                Invalid username or password
+            </div>
+			<div class="card-header">
+				<h1 class="text-center pb-4 pt-3">
+                    Admin Login</h1>
+			</div>
+			<div class="card-body">
+				<form (ngSubmit)="onSubmit()">
+                    <div>
+
+                    </div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-user"></i></span>
+						</div>
+						<input id="email" 
+                        type="email" 
+                        class="form-control"
+                        name="email"
+                        placeholder="username"
+                        #adminEmail="ngModel"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                        [ngClass]="{'is-invalid':adminEmail.errors && adminEmail.touched}"
+                        [(ngModel)]="email"
+                        required>
+                        <div [hidden]="!adminEmail.errors?.required" class="invalid-feedback">Email is required</div>
+                        <div [hidden]="!adminEmail.errors?.pattern" class="invalid-feedback">Email pattern is invalid</div>
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-key"></i></span>
+						</div>
+						<input id="pass" type="password" 
+                        class="form-control" data-type="password"
+                        name="password"
+                        placeholder="password"
+                        #adminPassword = "ngModel"
+                        [(ngModel)]="password"
+                        required>
+                        <div [hidden]="!adminPassword.errors?.required" class="invalid-feedback">Password is required</div>
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Login" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div *ngIf="isValid">
+    <router-outlet></router-outlet>
+</div>
+

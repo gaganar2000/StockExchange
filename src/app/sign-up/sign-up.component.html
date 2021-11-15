@@ -1,0 +1,85 @@
+<app-navbar></app-navbar>
+
+<div class="card bg-light">
+    <article class="card-body mx-auto" style="width: 40%">
+        <h4 class="card-title mt-5 text-center">Create Account</h4>
+        <!-- <div *ngIf="isSent">
+            {{ registerMessage }}
+        </div> -->
+        <form (ngSubmit)="onSubmit()">
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+             </div>
+
+            <input 
+                name="user.name" 
+                class="form-control" 
+                placeholder="Full name" 
+                type="text"
+                #userName = "ngModel"
+                [ngClass]="{'is-invalid':userName.errors && userName.touched}"
+                [(ngModel)]="user.name"
+                required>
+                <div [hidden]="!userName.errors?.required" class="invalid-feedback">Username is required</div>
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+             </div>
+            <input 
+                id="email" 
+                type="email" 
+                class="form-control"
+                name="user.email"
+                placeholder="Email"
+                #userEmail="ngModel"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                [ngClass]="{'is-invalid':userEmail.errors && userEmail.touched}"
+                [(ngModel)]="user.email"
+                required>
+            <div [hidden]="!userEmail.errors?.required" class="invalid-feedback">Email is required</div>
+            <div [hidden]="!userEmail.errors?.pattern" class="invalid-feedback">Email pattern is invalid</div>
+        </div>
+        
+
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+            </div>
+            <input name="user.mobile" 
+            class="form-control" 
+            placeholder="Phone number" 
+            type="text"
+            #userMobile = "ngModel"
+            [ngClass]="{'is-invalid':userMobile.errors && userMobile.touched}"
+            [(ngModel)]="user.mobile"
+            required>
+            <div [hidden]="!userMobile.errors?.required" class="invalid-feedback">Mobile Number is required</div>
+        </div>
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input 
+            class="form-control" 
+            placeholder="Create password" 
+            type="password"
+            name="user.password"
+            placeholder="password"
+            #userPassword = "ngModel"
+            [ngClass]="{'is-invalid':userPassword.errors && userPassword.touched}"
+             [(ngModel)]="user.password"
+            required>
+             <div [hidden]="!userPassword.errors?.required" class="invalid-feedback">Password is required</div>
+        </div>
+                                             
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+        </div>                                                                
+    </form>
+    </article>
+    <div *ngIf="registerMessage != ''">
+        {{ registerMessage }}
+    </div>
+</div>

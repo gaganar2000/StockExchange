@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact : true }">
+          <a class="nav-link" [routerLink]="['/admin/import-file']">Import Data</a></li>
+          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact : true }">
+          <a class="nav-link" [routerLink]="['/admin/list-company']">Manage Company</a></li>
+          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact : true }">
+          <a class="nav-link" [routerLink]="['/admin/manage-exchange']">Manage Exchange</a></li>
+          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact : true }">
+          <a class="nav-link" [routerLink]="['/admin/add-ipos']">Add IPO</a></li>
+          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact : true }">
+          <a class="nav-link" [routerLink]="['/admin/list-ipo']">IPO List</a></li>
+          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact : true }">
+          <a class="nav-link" [routerLink]="['/admin/company-chart']">Company Chart</a></li>
+      </ul>
+      <app-admin-signout></app-admin-signout>
+  </nav>

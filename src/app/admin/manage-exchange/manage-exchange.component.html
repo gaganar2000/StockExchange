@@ -1,0 +1,33 @@
+<app-admin-navbar></app-admin-navbar>
+<div  class="float-right">
+    <button [routerLink]="['/admin/add-exchange']" class="btn btn-success mt-5" ><i class="fa fa-plus">Add new Exchange</i></button>
+  </div>
+  <br>
+  <br>
+<h2>Stock Exchange List</h2>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Stock Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">City</th>
+        <th scope="col">Country</th>
+        <th scope="col">Remarks</th>
+        <th scope="col">Brief</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of stk">
+        <td>{{ s.id }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.address }}</td>
+        <td>{{ s.city }}</td>
+        <td>{{ s.country }}</td>
+        <td>{{ s.remarks }}</td>
+        <td>{{ s.brief }}</td>
+        <td><button class="btn btn-warning" routerLink="/admin/update-exchange/{{s.id}}"><i class="fa fa-edit"></i>Edit</button></td>
+      </tr>
+    </tbody>
+  </table>

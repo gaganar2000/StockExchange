@@ -1,0 +1,101 @@
+<app-admin-navbar></app-admin-navbar>
+<!-- <div class="card mt-5">
+    <div class="card-body bg-light" class="d-flex justify-content-center">
+        <div class="card">
+            <p class="card-header h6">Select Company Chart By Specific Date</p>        
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group mt-3 mb-3">
+                <div class="form-group">
+                    <span class="form-group-text">Date</span>
+                    <input type="date" class="form-control" 
+                    name="datee" 
+                    [(ngModel)]="date"
+                    required/>
+                </div>
+            </div>
+            <div class="d-flex no-gutters">
+                <div class="col">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="reset" class="btn btn-danger ml-2">Reset</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div> -->
+
+<div class="float-right mt-5">
+    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#form" aria-expanded="false" aria-controls="form">
+        <i class="fa fa-plus">
+            Select Company Chart By Specific Date
+    </i></button>
+    <div class="collapse" id="form">
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group mt-3 mb-3">
+                <div class="form-group">
+                    <span class="form-group-text">Date</span>
+                    <input type="date" class="form-control" 
+                    name="datee" 
+                    [(ngModel)]="date"
+                    required/>
+                </div>
+            </div>
+            <div class="d-flex no-gutters">
+                <div class="col">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="reset" class="btn btn-danger ml-2">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- <div class="float-right mt-5">
+    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#form1" aria-expanded="false" aria-controls="form">
+        <i class="fa fa-plus">
+        Based on Company
+    </i></button>
+    <div class="collapse" id="form1">
+        <form (ngSubmit)="onSubmit1()">
+            <div class="form-group mt-3 mb-3">
+                <div class="form-group">
+                    <span class="form-group-text">From Date</span>
+                    <input type="date" class="form-control" 
+                    name="fromDate" 
+                    [(ngModel)]="fromDate"
+                    required/>
+                </div>
+            </div>
+            <div class="form-group mt-3 mb-3">
+                <div class="form-group">
+                    <span class="form-group-text">To Date</span>
+                    <input type="date" class="form-control" 
+                    name="toDate" 
+                    [(ngModel)]="toDate"
+                    required/>
+                </div>
+            </div>
+            <div class="form-group mt-3 mb-3">
+                <div class="form-group">
+                    <span class="form-group-text">Company Code</span>
+                    <input type="text" class="form-control" 
+                    name="companyCode" 
+                    [(ngModel)]="companyCode"
+                    required/>
+                </div>
+            </div>
+            <div class="d-flex no-gutters">
+                <div class="col">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="reset" class="btn btn-danger ml-2">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> -->
+
+
+
+<div class="chart-container" style="position: relative; height:40vh; width:70vw" *ngIf="show">    
+    <canvas id="canvas"></canvas>    
+  </div> 

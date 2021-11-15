@@ -1,0 +1,36 @@
+<app-admin-navbar></app-admin-navbar>
+<div  class="float-right">
+  <button [routerLink]="['/admin/add-company']" class="btn btn-success mt-5" ><i class="fa fa-plus">Add new company</i></button>
+</div>
+<br>
+<br>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Company Name</th>
+        <th scope="col">CEO</th>
+        <th scope="col">TurnOver</th>
+        <th scope="col">Brief</th>
+        <th scope="col">Stock Exchange</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let company of comp">
+        <td>{{ company.id }}</td>
+        <td>{{ company.companyName }}</td>
+        <td>{{company.ceo}}</td>
+        <td>{{company.turnover}}</td>
+        <td>{{company.companyBrief}}</td>
+        <td>
+          <ul *ngFor="let item of company.stockexchange">
+            <li>{{item.name}}</li>
+          </ul>
+        </td>
+        <td><button class="btn btn-warning" routerLink="/admin/edit-company/{{company.id}}"><i class="fa fa-edit"></i>Edit</button></td>
+      </tr>
+    </tbody>
+  </table>
+

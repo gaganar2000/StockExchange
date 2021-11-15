@@ -1,0 +1,10 @@
+<br>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact : true }"><a class="nav-link" [routerLink]="['/user/stock-price']">Stock price</a></li>
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact : true }"><a class="nav-link" [routerLink]="['/user/list-company']">Manage Company</a></li>
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact : true }"><a class="nav-link" [routerLink]="['/user/manage-exchange']">Manage Exchange</a></li>
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact : true }"><a class="nav-link" [routerLink]="['/user/list-ipo']">IPO Details</a></li>
+    </ul>
+    <app-user-signout></app-user-signout>
+</nav>

@@ -1,0 +1,28 @@
+<app-user-navbar></app-user-navbar>
+<br>
+<br>
+<div>
+    <h2 class="text-center">Stock Price Details</h2>
+</div>
+<div>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Company Code</th>
+        <th scope="col">Share Price</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of stockPrice">
+        <td>{{ s.id }}</td>
+        <td>{{ s.companycode }}</td>
+        <td>{{s.shareprice}}</td>
+        <td>{{s.datee}}</td>
+        <td>{{s.time}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

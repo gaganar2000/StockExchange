@@ -1,0 +1,54 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="card shadow">
+    <p class="h4 card-header">Update IPO Detail</p>
+    <div class="card-body bg-light" class="d-flex justify-content-center">
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group mt-3 mb-3">
+                <div class="form-group">
+                    <span class="form-group-text">Price per Share</span>
+                    <input type="number" class="form-control" 
+                    name="ipodetail.pricePerShare" 
+                    [(ngModel)]="ipodetail.pricePerShare" 
+                    required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group col-md-6">
+                  <label>Total number of Shares</label>
+                  <input type="number" class="form-control"
+                  name="ipodetail.totalNumberOfShares" 
+                  [(ngModel)]="ipodetail.totalNumberOfShares" 
+                    required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group col-md-6">
+                  <label>Open Date</label>
+                  <input type="date" class="form-control" 
+                  name="ipodetail.openDateTime" 
+                    [(ngModel)]="ipodetail.openDateTime" 
+                    required/>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <div class="form-group">
+                    <label>Remarks</label>
+                    <input type="text" class="form-control"
+                    name="ipodetail.remarks" 
+                    [(ngModel)]="ipodetail.remarks" 
+                    required/>
+                </div>
+            </div>
+            <div class="d-flex no-gutters">
+                <div class="col">
+                    <button type="submit" class="btn btn-success">update</button>
+                    <button type="reset" class="btn btn-danger ml-2">Reset</button>
+                </div>
+                <div>
+                    <button [routerLink]="['/admin/list-ipo']" class="btn btn-secondary">Back</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
